@@ -1,5 +1,24 @@
-html{
-    padding:0;
-    margin:0;
+$primary-color: rgb(15, 120, 243);
+$grey-border: 1px solid rgb(222, 215, 215);
+
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    background: rgb(235, 234, 234);
+}
+
+*,
+::after,
+::before {
+    outline: none;
     box-sizing: border-box;
 }

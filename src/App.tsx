@@ -3,9 +3,17 @@ import ProductCostAndShipmentCostForm from "./components/forms/ProductCostAndShi
 
 function App() {
   return (
-    <div className="App">
-      <ProductCostAndShipmentCostForm/>
-    </div>
+    <main className="pcasc-app-wrapper">
+      <div className="row flex">
+        <div className="col col-6">
+          <ProductCostAndShipmentCostForm />
+        </div>
+        <div className="col col-6">
+          <p>Results</p>
+        </div>
+      </div>
+
+    </main>
   );
 }
 

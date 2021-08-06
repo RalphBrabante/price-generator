@@ -1,4 +1,59 @@
 html {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background: #ebeaea; }
+
+*,
+::after,
+::before {
+  outline: none;
   box-sizing: border-box; }
+
+.pcasc-app-wrapper {
+  max-width: 105rem;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1.5rem;
+  height: calc(100vh - 2rem);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
+
+.col-6 {
+  width: 50%; }
+
+.col {
+  padding: 1rem; }
+
+.form-group {
+  padding: 0.7rem 0; }
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ded7d7; }
+
+.btn {
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem; }
+
+.btn-primary {
+  padding: 1rem 2rem;
+  background: #0f78f3;
+  color: #fff; }
+
+.flex {
+  display: flex; }
+
+.stretch-width {
+  width: 100%; }
+
+.vertical-flex-align {
+  align-items: flex-end; }
