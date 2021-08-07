@@ -42,7 +42,8 @@ input[type="number"] {
 .btn {
   padding: 1rem 2rem;
   border: 1px solid transparent;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  cursor: pointer; }
 
 .btn-primary {
   padding: 1rem 2rem;
