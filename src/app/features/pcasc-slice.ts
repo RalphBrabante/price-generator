@@ -9,7 +9,10 @@ interface FormDataState {
 }
 
 const initialState: { object: FormDataState } = {
-  object: {},
+  object: {
+    taxRate: 12,
+    otherTaxesPercentage: 33,
+  },
 };
 
 export const pcascSlice = createSlice({
