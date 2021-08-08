@@ -5,6 +5,12 @@ export const getProductCostAndShipment = (
 ): number => {
   const shipmentCostPerItem = shipmentCost / shipmentQty;
 
-  console.log(shipmentCost / shipmentQty);
   return productCost + shipmentCostPerItem;
+};
+
+export const getPriceWithMarkup = (
+  productCostAndShipment: number = 0,
+  markupPercentage: number = 0
+): number => {
+  return productCostAndShipment * (1 + markupPercentage / 100);
 };

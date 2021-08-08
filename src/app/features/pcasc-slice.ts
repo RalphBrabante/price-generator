@@ -6,12 +6,14 @@ interface FormDataState {
   shipmentNumberOfItems?: number;
   taxRate?: number;
   otherTaxesPercentage?: number;
+  markupPercentage?: number;
 }
 
 const initialState: { object: FormDataState } = {
   object: {
     taxRate: 12,
     otherTaxesPercentage: 33,
+    markupPercentage: 0,
   },
 };
 

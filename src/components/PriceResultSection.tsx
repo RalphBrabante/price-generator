@@ -1,6 +1,6 @@
 import { useAppSelector } from "../app/store/hooks";
 import { currencyFormatter } from "../utils/currency";
-import { getProductCostAndShipment } from "../utils/productCalculations";
+import { getPriceWithMarkup, getProductCostAndShipment } from "../utils/productCalculations";
 
 const PriceResultSection = () => {
   const data = useAppSelector((state) => state.pscascReducer.object);
@@ -22,8 +22,14 @@ const PriceResultSection = () => {
           )
         )}
       </p>
+      <p>Product With {data.markupPercentage}% Markup: {currencyFormatter(getPriceWithMarkup(getProductCostAndShipment(
+            data.productCost,
+            data.shipmentCost,
+            data.shipmentNumberOfItems
+          ), data.markupPercentage))}</p>
     </div>
   );
 };
 
 export default PriceResultSection;
+

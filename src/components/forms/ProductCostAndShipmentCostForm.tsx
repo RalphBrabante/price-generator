@@ -8,11 +8,12 @@ import InputField from "./fields/InputField"
 
 
 interface FormDataState {
-    productCost?: number,
-    shipmentCost?: number,
-    shipmentNumberOfItems?: number
-    otherTaxesPercentage?: number
-    taxRate: number
+    productCost?: number;
+    shipmentCost?: number;
+    shipmentNumberOfItems?: number;
+    otherTaxesPercentage?: number;
+    markupPercentage?: number;
+    taxRate: number;
     
 }
 
@@ -29,7 +30,9 @@ const ProductCostAndShipmentCostForm = () => {
         shipmentCost: undefined,
         shipmentNumberOfItems: undefined,
         taxRate: 12,
-        otherTaxesPercentage: 33
+        otherTaxesPercentage: 33,
+        markupPercentage: undefined
+        
     } as FormDataState)
 
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,6 +51,7 @@ const ProductCostAndShipmentCostForm = () => {
             <InputField fieldClass="product-cost" fieldType="number" fieldName="productCost" changeHandler={changeHandler} fieldValue={formData.productCost} fieldPlaceholder="Product Cost" />
             <InputField fieldClass="shipment-cost" fieldType="number" fieldName="shipmentCost" changeHandler={changeHandler} fieldValue={formData.shipmentCost} fieldPlaceholder="Shipment Cost" />
             <InputField fieldClass="shipment-number-of-items" fieldType="number" fieldName="shipmentNumberOfItems" changeHandler={changeHandler} fieldValue={formData.shipmentNumberOfItems} fieldPlaceholder="Shipment Item Quantity" />
+            <InputField fieldClass="markup-percentage" fieldType="number" fieldName="markupPercentage" changeHandler={changeHandler} fieldValue={formData.markupPercentage} fieldPlaceholder="Markup Percentage" />
             <RadioField fieldData={[{ cBoxName: 'taxType', value: "Vatable" }, { cBoxName: 'taxType', value: "Non-vatable" }]} />
             <Button btnClass="primary stretch-width" btnText="Calculate" clickHandler={()=>{dispatch(calculate(formData))}}/>
         </form>
