@@ -1,6 +1,10 @@
 import { useAppSelector } from "../app/store/hooks";
 import { currencyFormatter } from "../utils/currency";
-import { getPriceWithMarkup, getProductCostAndShipment } from "../utils/productCalculations";
+import {
+  getPriceWithMarkup,
+  getProductCostAndShipment,
+  getVatInclusive,
+} from "../utils/productCalculations";
 
 const PriceResultSection = () => {
   const data = useAppSelector((state) => state.pscascReducer.object);
@@ -22,14 +26,38 @@ const PriceResultSection = () => {
           )
         )}
       </p>
-      <p>Product With {data.markupPercentage}% Markup: {currencyFormatter(getPriceWithMarkup(getProductCostAndShipment(
-            data.productCost,
-            data.shipmentCost,
-            data.shipmentNumberOfItems
-          ), data.markupPercentage))}</p>
+      <p>
+        Vatable Sales ({data.markupPercentage}% Markup):{" "}
+        {currencyFormatter(
+          getPriceWithMarkup(
+            getProductCostAndShipment(
+              data.productCost,
+              data.shipmentCost,
+              data.shipmentNumberOfItems
+            ),
+            data.markupPercentage
+          )
+        )}
+      </p>
+
+      <p>
+        Vat Inclusive:{" "}
+        {currencyFormatter(
+          getVatInclusive(
+            getPriceWithMarkup(
+              getProductCostAndShipment(
+                data.productCost,
+                data.shipmentCost,
+                data.shipmentNumberOfItems
+              ),
+              data.markupPercentage
+            ),
+            data.taxRate
+          )
+        )}
+      </p>
     </div>
   );
 };
 
 export default PriceResultSection;
-
