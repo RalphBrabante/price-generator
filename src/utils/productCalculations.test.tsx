@@ -5,7 +5,7 @@ describe("Product Calculation Module", () => {
     const value = getProductCostAndShipment(500, 100, 10);
     expect(value).toEqual(510);
   });
-  
+   
   test("getPriceWithMarkup()", () => {
     const value = getPriceWithMarkup(500,100);
     expect(value).toEqual(1000);
