@@ -15,6 +15,13 @@ export const getPriceWithMarkup = (
   return productCostAndShipment * (1 + markupPercentage / 100);
 };
 
+export const getOtherTaxInclusive = (
+  priceWithMarkup: number = 0,
+  otherTaxPercentage: number = 33
+): number => {
+  return priceWithMarkup * (1 + otherTaxPercentage / 100);
+};
+
 export const getVatInclusive = (
   priceWithMarkup: number = 0,
   vatPercentage: number = 0
